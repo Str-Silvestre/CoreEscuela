@@ -44,7 +44,7 @@ namespace Etapa1
             int contador = 0;
             while (contador < listCursos.LongLength)
             {
-                Console.WriteLine($"Nombre: {listCursos[contador].Nombre}, Id: {listCursos[contador].UniqueId} ");
+                WriteLine($"Nombre: {listCursos[contador].Nombre}, Id: {listCursos[contador].UniqueId} ");
 
                 contador++;
             }
