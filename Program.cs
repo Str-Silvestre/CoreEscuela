@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Drawing;
+using System;
 using CoreEscuela.Entidades;
 using static System.Console;
 
@@ -8,6 +9,8 @@ namespace Etapa1
     {
         static void Main(string[] args)
         {
+
+            Console.BackgroundColor = ConsoleColor.Green;
             var escuela = new Escuela("Cenforcasa", 2015, TiposEscuela.Primaria);
             escuela.Pais = "Rep. Dom.";
             escuela.Ciudad = "San Cristobal";
@@ -44,6 +47,7 @@ namespace Etapa1
             int contador = 0;
             while (contador < listCursos.LongLength)
             {
+
                 WriteLine($"Nombre: {listCursos[contador].Nombre}, Id: {listCursos[contador].UniqueId} ");
 
                 contador++;
