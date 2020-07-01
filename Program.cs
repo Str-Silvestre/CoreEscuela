@@ -10,7 +10,7 @@ namespace Etapa1
         static void Main(string[] args)
         {
 
-            Console.BackgroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.DarkGray;
             var escuela = new Escuela("Cenforcasa", 2015, TiposEscuela.Primaria);
             escuela.Pais = "Rep. Dom.";
             escuela.Ciudad = "San Cristobal";
