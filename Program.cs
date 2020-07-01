@@ -11,6 +11,7 @@ namespace Etapa1
         {
 
             Console.BackgroundColor = ConsoleColor.DarkGray;
+            ForegroundColor = ConsoleColor.Blue;
             var escuela = new Escuela("Cenforcasa", 2015, TiposEscuela.Primaria);
             escuela.Pais = "Rep. Dom.";
             escuela.Ciudad = "San Cristobal";
