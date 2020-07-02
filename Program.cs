@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using System.Runtime.ConstrainedExecution;
+using System.Collections.Generic;
+using System.Drawing;
 using System;
 using CoreEscuela.Entidades;
 using static System.Console;
@@ -16,17 +18,36 @@ namespace Etapa1
             escuela.Ciudad = "San Cristobal";
 
             escuela.TipoEscuela = TiposEscuela.Primaria;
-            escuela.Cursos = new Curso[] {
-                new Curso{Nombre = "101"},
-                new Curso{Nombre = "201"},
-                new Curso{Nombre = "301"}
+
+            escuela.Cursos = new List<Curso>(){
+                new Curso{Nombre = "101", Jornada = TiposJornada.Mañana},
+                new Curso{Nombre = "201", Jornada = TiposJornada.Mañana},
+                new Curso{Nombre = "301", Jornada = TiposJornada.Mañana}
             };
 
+            escuela.Cursos.Add( new Curso{ Nombre = "102", Jornada = TiposJornada.Tarde});
+            escuela.Cursos.Add( new Curso{ Nombre = "202", Jornada = TiposJornada.Tarde});
 
+            var otrosCursos = new List<Curso>(){
+                new Curso{Nombre = "401", Jornada = TiposJornada.Mañana},
+                new Curso{Nombre = "501", Jornada = TiposJornada.Mañana},
+                new Curso{Nombre = "501", Jornada = TiposJornada.Noche}
+            };
+
+            escuela.Cursos.AddRange(otrosCursos);
+            escuela.Cursos.RemoveAll(delegate(Curso cur)
+                                       {    
+                                           return cur.Nombre == "301";
+
+                                       });
+
+            escuela.Cursos.RemoveAll((cur)=> cur.Nombre == "501" && cur.Jornada == TiposJornada.Noche);
             ImprimirCursosEscuela(escuela);
 
-        }
 
+
+        }
+        
         private static void ImprimirCursosEscuela(Escuela escuela)
         {
             WriteLine("=======================");
