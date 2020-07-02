@@ -3,7 +3,7 @@ using System;
 namespace CoreEscuela.Entidades
 {
     
-    class Escuela
+     public class Escuela
     {
         string nombre;
 
