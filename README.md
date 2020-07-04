@@ -1,0 +1,2 @@
+# CoreEscuela
+Proyecto escuela.net
